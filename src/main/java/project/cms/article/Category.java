@@ -1,16 +1,21 @@
 package project.cms.article;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-@Getter
-@ToString
-@EqualsAndHashCode
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Category {
 
+    @Id
+    @GeneratedValue
 	private Long id;
     private String name;
 

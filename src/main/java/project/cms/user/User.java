@@ -1,16 +1,23 @@
 package project.cms.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import lombok.*;
 
-@Getter
-@ToString
-@EqualsAndHashCode
+
+@Entity
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
-    private Long id;
+
+    @Id
+    @GeneratedValue
+	public Long id;
     private String name;
     private String email;
-
     private String identity;
 
     Role role;

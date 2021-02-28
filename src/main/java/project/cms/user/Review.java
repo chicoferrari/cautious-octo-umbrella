@@ -1,9 +1,19 @@
 package project.cms.user;
 
+import javax.persistence.Embeddable;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Embeddable
 public class Review {
 
-    private String userId;
+    public String userId;
 
-    private String status;
+    public String status;
 
 }
