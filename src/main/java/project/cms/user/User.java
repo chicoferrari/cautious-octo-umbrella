@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import lombok.*;
 
 
@@ -14,11 +16,12 @@ import lombok.*;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "system_user")
+    @GenericGenerator(name = "system_user", strategy = "increment")
 	public Long id;
+
     private String name;
     private String email;
-    private String identity;
 
     Role role;
 }

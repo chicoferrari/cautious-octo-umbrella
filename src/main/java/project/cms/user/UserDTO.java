@@ -1,12 +1,12 @@
 package project.cms.user;
 
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 public class UserDTO {
 
     Long id;
-    String identity;
+
     String name;
     String email;
 

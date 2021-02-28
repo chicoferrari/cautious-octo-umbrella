@@ -2,16 +2,21 @@ package project.cms.article;
 
 import org.springframework.stereotype.Service;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
+
+    private ArticleRepository articleRepository;
 
     @Override
     public Article createArticle(ArticleDTO articleDTO) {
-        Article newArticle = new Article(
-            articleDTO.getId(),
+        Article Article = new Article(
+            null,
             articleDTO.getTitle(),
             articleDTO.getContent()
         );
-        return newArticle;
+        return this.articleRepository.save(Article);
     }
 }

@@ -1,8 +1,8 @@
 package project.cms.article;
 
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 public class ArticleDTO {
 
     long id;
