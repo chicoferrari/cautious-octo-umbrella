@@ -1,0 +1,9 @@
+spring.jpa.hibernate.ddl-auto=update
+
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/cms_project
+
+spring.datasource.username=foo
+spring.datasource.password=bar
+
+server.error.include-message=always
+server.error.include-binding-errors=always
