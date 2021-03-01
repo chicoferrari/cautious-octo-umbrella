@@ -20,7 +20,8 @@ public class User {
     @GenericGenerator(name = "system_user", strategy = "increment")
 	public Long id;
 
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
 
     Role role;
