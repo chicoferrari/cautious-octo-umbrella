@@ -6,7 +6,7 @@ public interface UserService {
 
     User createUser(UserDTO userDTO);
 
-    //void delete(Long id);
+    void deleteUser(Long id);
 
     //Iterable<User> findAll();
 

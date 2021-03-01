@@ -6,7 +6,7 @@ public interface ArticleService {
 
         Article createArticle(ArticleDTO articleDTO);
 
-       // void deleteArticle(Long id);
+        void deleteArticle(Long id);
 
         //Iterable<Article> findAll();
 

@@ -1,5 +1,7 @@
 package project.cms.article;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -18,4 +20,11 @@ public class CategoryServiceImpl  implements CategoryService {
         );
         return this.categoryRepository.save(Category);
     }
+
+    @Override
+    public void deleteCategory(Long id) {
+        final Optional<Category> category = this.categoryRepository.findById(id);
+        category.ifPresent(this.categoryRepository::delete);
+    }
+
 }
