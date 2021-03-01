@@ -31,26 +31,28 @@ class UserController {
     //Create
     @PostMapping("/user")
     ResponseEntity<User> createUser(@RequestBody @Valid UserDTO userDTO) {
-        log.info("Criando usuario: {}", userDTO);
+        log.info("Criou o usuario: {}?", userDTO);
         return ResponseEntity.ok(userService.createUser(userDTO));
     }
 
     //Retrieve -ALL-
     @GetMapping
     ResponseEntity<List<User>> findAll() {
+        log.info("Retornou os usuários?");
         return ResponseEntity.ok(Arrays.asList(new User(), new User()));
     }
 
     //Retrieve -ONE-
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findOne(@PathVariable("id") String id) {
+        log.info("Retornou o usuario: {}?");
         return ResponseEntity.ok(new User());
     }
 
     //Update
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable("id") Long id, @RequestBody @Valid UserDTO userDTO) {
-        log.info("Atualizado!");
+        log.info("Atualizado?");
         return ResponseEntity.ok(userService.updateUser(id, userDTO));
     }
 

@@ -30,12 +30,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Iterable<User> findAll() {
+        log.info("Segue lista de usuarios: ");
         return userRepository.findAll();
     }
 
     public User findOne(Long id) {
         final Optional<User> user = this.userRepository.findById(id);
         if(user.isPresent()){
+            log.info("Segue usuario!");
             return user.get();
         }else {
           throw new UserNotFoundException(id);
@@ -51,6 +53,7 @@ public class UserServiceImpl implements UserService {
             userDB.setLastName(userDTO.getLastName());
             userDB.setEmail(userDTO.getEmail());
             userDB.setRole(userDTO.getRole());
+            log.info("Usuario atualizado!");
             return this.userRepository.save(userDB);
         }else {
             throw new UserNotFoundException(id);
@@ -61,6 +64,7 @@ public class UserServiceImpl implements UserService {
 	public void deleteUser(Long id) {
         final Optional<User> user = this.userRepository.findById(id);
         user.ifPresent(this.userRepository::delete);
+        log.info("Usuario apagado!");
     }
 
 }
